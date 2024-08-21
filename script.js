@@ -64,3 +64,6 @@ console.log(isChecked && isClosed); // false , так как isClosed ОБРАЩ
 const isBad = true,
   notGood = true;
 console.log(isBad || notGood); // true
+
+// git commit -a -m"commit text"
+// git push
