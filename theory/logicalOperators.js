@@ -51,3 +51,34 @@ switch (myAge) {
 }
 // switch сравнивает исходное значение с каждым значением (case) с использованием строгого сравнения (===).
 // Если совпадение найдено, выполняется соответствующий блок кода. break предотвращает выполнение последующих case. default блок выполняется, если ни одно совпадение не найдено.
+
+const hamburger = true;
+const fries = true;
+if (hamburger && fries) {
+  console.log("Your order is possible");
+}
+
+console.log(hamburger && fries); // выводит true
+
+const cars = 5,
+  moto = 10;
+
+if (cars === 5 && moto <= 10) {
+  console.log("Все довольны");
+} else {
+  console.log("Не довольны");
+}
+
+if (cars === 5 || moto <= 10) {
+  console.log("Все снова довольны");
+} else {
+  console.log("Не довольны");
+}
+
+// example
+
+let joghReport,
+  alexReport,
+  luciReport,
+  kiriReport = "Done";
+console.log(joghReport || alexReport || luciReport || kiriReport);
