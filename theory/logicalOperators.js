@@ -81,4 +81,4 @@ let joghReport,
   alexReport,
   luciReport,
   kiriReport = "Done";
-console.log(joghReport || alexReport || luciReport || kiriReport);
+console.log(joghReport || alexReport || luciReport || kiriReport); // Done
