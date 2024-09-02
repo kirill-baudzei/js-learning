@@ -1,5 +1,5 @@
 // Функции в JavaScript (ES6)
-
+// функции работают до того как созданы тоже
 // Обычные функции:
 
 // Объявляются с использованием ключевого слова function.
@@ -44,3 +44,12 @@ function ret() {
 }
 const anotherNum = ret();
 console.log(anotherNum); // выводит 50
+
+// function expresion
+const logger = function (params) {
+  console.log("Hello!");
+};
+logger();
+
+// стрелочная функция
+const calculate = (d, g) => d + g;
