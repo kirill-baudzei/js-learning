@@ -53,3 +53,25 @@ logger();
 
 // стрелочная функция
 const calculate = (d, g) => d + g;
+
+// аргументы функций
+const eurCurr = 4.3;
+const usdCurr = 3.9;
+function converter(amount, currency) {
+  console.log(amount * currency);
+}
+
+converter(1050, eurCurr);
+
+// Про важность return
+const expense = 2;
+
+function pricing(price, expense) {
+  return price * expense;
+}
+
+const discount = 0.5;
+function promotion(result) {
+  console.log(result * discount);
+}
+promotion(pricing(10, expense));
