@@ -20,9 +20,9 @@ const personalPlanPeter = {
     },
     showAgeAndLangs: function(plan) {
         const {age} = plan;
-        const {languages} = plam.skills
-        let str = `Мне ${age} лет и я владею языками: `;
-        
+        const {languages} = plan.skills;
+        let str = `Мне ${age} и я владею языками: `;
+
         languages.forEach(function(lang) {
             str += `${lang.toUpperCase()} `;
         });

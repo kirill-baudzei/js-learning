@@ -90,3 +90,11 @@ function log(a, b, c) {
 }
 const num = [2, 5, 7];
 log(...num);
+
+
+const array1 = ['abc', 'dfg'];
+const newArray1 = [...array1];
+console.log(newArray1); // [ 'abc', 'dfg' ]
+array1[3] = '1efe';
+console.log(newArray1); // [ 'abc', 'dfg' ]
+console.log(array1); // [ 'abc', 'dfg', <1 empty item>, '1efe' ]
