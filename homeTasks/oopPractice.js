@@ -45,13 +45,13 @@ const personalMovieDB = {
   },
   detectLevel: function() {
     if (personalMovieDB.count < 10) {
-      console.log("Вы смотрите мало фильов");
+      console.log("Вы смотрите мало фильмов;");
     } else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
-      console.log("Классический зритель");
+      console.log("Классический зритель;");
     } else if (personalMovieDB.count > 30) {
-      console.log("КИноман!");
+      console.log("Киноман!");
     } else {
-      console.log("Произошла ошибка");
+      console.log("Произошла ошибка;");
     }
   },
   showMyDb: function(hidden) {
@@ -65,22 +65,22 @@ const personalMovieDB = {
         personalMovieDB.genres[i - 1] = genre;
 
         if (genre === '' || genre == null) {
-            console.log('Вы ввели некорректные данные или не ввели их вообще');
+            console.log('Вы ввели некорректные данные или не ввели их вообще;');
             i--;
         } else {
-            personalMovieDB.genres[i - 1] = genre
+            personalMovieDB.genres[i - 1] = genre;
         }
     }
 
     personalMovieDB.genres.forEach((item, i) => {
-        console.log(`Любимый жанр #${i} - это ${item}`)
-    })
+        console.log(`Любимый жанр #${i} - это ${item};`);
+    });
   },
   toggleVisibleMyDB: function() {
     if (personalMovieDB.privat) {
-        personalMovieDB.privat = false
+        personalMovieDB.privat = false;
     } else {
-        personalMovieDB.privat = true
+        personalMovieDB.privat = true;
     }
   }
 };

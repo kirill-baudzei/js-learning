@@ -25,4 +25,4 @@ console.log(john.armor); // 100 - john получил свойство от пр
 // современная работа с прототипами и наследованием
 Object.setPrototypeOf(john, soldier); // для john будет прототип от soldier
 const sam = Object.create(soldier); // создаем новый объект sam , который наследуется от soldier объекта
-sam.sayHi();
+sam.sayHi(); // Hi!
