@@ -20,7 +20,7 @@
 // следующий li получили из метода выше]
 
 
-// перебор всех child nodes и избавляемся от текстовых
+// перебор всех child nodes и избавляемся от текстовых. 
 for (let node of document.body.childNodes) {
     if (node.nodeName == '#text') {
         continue;
