@@ -94,8 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelectorAll('.delete').forEach((btn, i) => {
             btn.addEventListener('click', () => {
-                btn.parentElement.remove();
-                movieDB.movies.splice(i, 1);
+                btn.parentElement.remove(); // удаляем с фронта родительский элемент
+                movieDB.movies.splice(i, 1); // удаляем из обьекта
 
                 createMovieList(films, parent);
             });
@@ -105,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
     deleteAdv(adv);
     makeChanges();
     createMovieList(movieDB.movies, movieList);
-
 });
 
 
