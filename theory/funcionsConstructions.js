@@ -17,9 +17,9 @@ console.log(alex); // User { name: 'Alex', id: 25, human: true }
 
 kirill.hello(); // Hello Kirill! You are 22!!!
 
-User.prototype.exit = function(name) {
+User.prototype.exit = function(name) { // это будет общий метод для конструктора User
     console.log(`User ${this.name} left`)
 };
 
 alex.exit(); // User Alex left
-kirill.exit();
+kirill.exit(); // User Kirill left
