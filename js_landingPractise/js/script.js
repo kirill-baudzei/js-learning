@@ -41,14 +41,14 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // timer
 
-    const deadline = '2024-10-20';
+    const deadline = '2024-11-20';
 
     function getTimeRemaning(endTime) {
         const t = Date.parse(endTime) - Date.parse(new Date()),
               days = Math.floor(t / (1000 * 60 * 60 * 24)),
               hours = Math.floor((t / (1000 * 60 * 60)) % 24),
               minutes = Math.floor((t / 1000 / 60) % 60),
-              seconds = Math.floor(t / 1000);
+              seconds = Math.floor((t / 1000) % 60);
 
         return {
             'total': t,
@@ -84,4 +84,55 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 
     setClock('.timer', deadline);
+
+    // modal window
+
+    const modalTriger = document.querySelectorAll('[data-modal]'),
+          modal = document.querySelector('.modal'),
+          modalCloseBtn = document.querySelector('[data-close]');
+
+    function openModal() {
+        modal.classList.add('show');
+        modal.classList.remove('hide');
+        document.body.style.overflow = 'hidden';
+        clearInterval(modalTimerId);
+    };
+
+    modalTriger.forEach(btn => {
+       btn.addEventListener('click', openModal);
+    });
+
+    function closeModal() {
+        modal.classList.add('hide');
+        modal.classList.remove('show');
+        // modal.classList.toggle('show')
+        document.body.style.overflow = '';
+    };
+
+    modalCloseBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.code === 'Escape' && modal.classList.contains('show')) {
+            closeModal();
+        };
+    });
+
+    // появление модалки по таймеру
+
+    const modalTimerId = setTimeout(openModal, 5000);
+
+    function showModalByScroll() {
+        if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 2) {
+            openModal();
+            window.removeEventListener('scroll', showModalByScroll);
+        };
+    };
+
+    window.addEventListener('scroll', showModalByScroll);
 });

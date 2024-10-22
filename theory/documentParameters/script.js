@@ -22,5 +22,6 @@ console.log(box.getBoundingClientRect().top); // только одна коор�
 
 const style = window.getComputedStyle(box);
 
-console.log(style);
+console.log(style); // CSSStyleDeclaration {0: 'accent-color', 1: 'align-content', 2: 'align-items', 3: 'align-self', .......
+// получаем большой кусок информации о всех стилях
 
