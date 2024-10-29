@@ -125,7 +125,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // появление модалки по таймеру
 
-    const modalTimerId = setTimeout(openModal, 5000);
+    // const modalTimerId = setTimeout(openModal, 5000);
 
     function showModalByScroll() {
         if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 2) {
@@ -135,4 +135,76 @@ window.addEventListener('DOMContentLoaded', function() {
     };
 
     window.addEventListener('scroll', showModalByScroll);
+
+    // переносим карточки в классы
+    class MenuCard {
+        constructor(src, alt, title, descr, price, parentSelector, ...classes) {
+            this.src = src;
+            this.alt = alt;
+            this.title = title;
+            this.descr = descr;
+            this.price = price;
+            this.classes = classes;
+            this.parent = document.querySelector(parentSelector);
+            this.transfer = 27;
+            this.changeToUAH();
+        }
+    
+        changeToUAH() {
+            this.price = this.price * this.transfer;
+        }
+    
+        render() {
+            const element = document.createElement('div');
+            if (this.classes.length === 0) {
+                this.element = 'menu__item';
+                element.classList.add(this.element);
+            } else {
+                this.classes.forEach(className => element.classList.add(className));
+            }
+            element.innerHTML = `
+                    <img src=${this.src} alt=${this.alt}>
+                    <h3 class="menu__item-subtitle">${this.title}</h3>
+                    <div class="menu__item-descr">${this.descr}</div>
+                    <div class="menu__item-divider"></div>
+                    <div class="menu__item-price">
+                        <div class="menu__item-cost">Цена:</div>
+                        <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
+                    </div>
+            `;
+            this.parent.append(element); // Исправлено appent на append
+        }
+    }
+    
+    // Вызов метода render() с правильными скобками
+    new MenuCard(
+        "img/tabs/vegy.jpg",
+        "vegy",
+        "'MENU FITNESS'",
+        "Menu 'FITNESS' IS NICE",
+        10,
+        '.menu .container',
+        'menu__item'
+    ).render();
+
+    new MenuCard(
+        "img/tabs/elite.jpg",
+        "elite",
+        "'MENU PREMIUM'",
+        "Menu 'PREMIUM' IS NICE",
+        100,
+        '.menu .container',
+        'menu__item'
+    ).render();
+
+    new MenuCard(
+        "img/tabs/post.jpg",
+        "post",
+        "'MENU POSTNOE'",
+        "Menu 'POSTNOE' IS VERY GOOD",
+        48,
+        '.menu .container',
+        'menu__item'
+    ).render();
+    
 });
