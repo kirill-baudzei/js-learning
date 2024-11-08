@@ -8,4 +8,4 @@ const obj = {
 let id = Symbol("id");
 obj[id] = 1;
 
-console.log(obj);
+console.log(obj); // { name: 'test', [Symbol(id)]: 1 }
