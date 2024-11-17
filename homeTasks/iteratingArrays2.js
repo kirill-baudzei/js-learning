@@ -31,4 +31,9 @@ const getTotalIncomeAmount = (data) => {
         return getPositiveIncomeAmount(data);
     }
 };
-console.log(getTotalIncomeAmount(funds));
+console.log(getTotalIncomeAmount(funds)); // -500
+
+// короткое решение
+// const getTotalIncomeAmount = (data) => {
+//     return data.some(item => item.amount < 0) ? data.reduce((acc, curr) => acc + curr.amount, 0) : getPositiveIncomeAmount(data);
+// }

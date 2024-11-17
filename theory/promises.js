@@ -48,3 +48,18 @@ req.then((product) => {
     console.log('Операция Finally'); // Выполняется всегда, независимо от того, был ли промис выполнен успешно или с ошибкой.
 });
 
+
+const test = time => {
+    return new Promise(resolve => {
+        setTimeout(() => resolve(), time);
+    });
+
+}
+
+test(1000).then(() => console.log('1000 ms'));
+test(2000).then(() => console.log('2000 ms'));
+
+Promise.all([test(1000), test(2000)]).then(() => {
+    console.log('Все промисы выполнились ALL')
+});
+

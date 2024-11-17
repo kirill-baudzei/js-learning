@@ -48,6 +48,7 @@ const newArr = Object.entries(obj)
 .filter(item => item[1] === 'persone')
 .map(item => item[0]);
 console.log(newArr); // [ [ 'ivan', 'persone' ], [ 'ann', 'persone' ] ] после операции с filter 
+// [ 'ivan', 'ann' ] - после операции с map
 
 
 
