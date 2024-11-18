@@ -300,4 +300,8 @@ window.addEventListener('DOMContentLoaded', function() {
     // fetch('https://jsonplaceholder.typicode.com/todos/1')
     //   .then(response => response.json())
     //   .then(json => console.log(json));
+
+    fetch('db.json')
+        .then(data => data.json())
+        .then(res => console.log(res));
 });
