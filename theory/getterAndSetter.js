@@ -13,6 +13,6 @@ const persone = {
     }
 };
 
-console.log(persone.userAge = 30); 
+console.log(persone.userAge = 30); // 30 установить возможно только при наличии сетера!
 
-console.log(persone.userAge);
+console.log(persone.userAge); // 30
